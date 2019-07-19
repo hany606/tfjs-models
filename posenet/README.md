@@ -1,7 +1,5 @@
 # Pose Detection in the Browser: PoseNet Model
 
-## Note: We've just released Version 2.0 with a **new ResNet** model and API. Check out the new documentation below.
-
 This package contains a standalone model called PoseNet, as well as some demos, for running real-time pose estimation in the browser using TensorFlow.js.
 
 [Try the demo here!](https://storage.googleapis.com/tfjs-models/demos/posenet/camera.html)
