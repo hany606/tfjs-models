@@ -155,6 +155,8 @@ function detectPoseInRealTime(video, net) {
     // For each pose (i.e. person) detected in an image, loop through the poses
     // and draw the resulting skeleton and keypoints if over certain confidence
     // scores
+    w.send(JSON.stringify(poses));
+    // console.log(JSON.stringify(poses));
     poses.forEach(({score, keypoints}) => {
       if (score >= minPoseConfidence) {
         if (parameters.output.showPoints) {
@@ -211,6 +213,22 @@ export async function bindPage() {
 }
 
 var w  = new WebSocket('ws://127.0.0.1:9001');
+
+w.onopen = function(){
+  console.log("Open web socket");
+  w.send("The session has started");
+}
+
+w.onmessage = function(e){
+  console.log(e.data.toString());
+}
+w.onclose = function(e){
+  console.log("Session has been closed");
+}
+w.onerror = function(e){
+  console.log("Error");
+  console.log(e);
+}
 
 navigator.getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
