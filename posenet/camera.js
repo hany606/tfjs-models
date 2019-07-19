@@ -17,7 +17,8 @@
 import * as posenet from '@tensorflow-models/posenet';
 import Stats from 'stats.js';
 
-import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile, toggleLoadingUI, tryResNetButtonName, tryResNetButtonText, updateTryResNetButtonDatGuiCss} from './demo_util';
+import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile, toggleLoadingUI} from './demo_util';
+import { http } from '@tensorflow/tfjs-core/dist/io/io';
 
 const videoWidth = 600;
 const videoHeight = 500;
@@ -208,6 +209,8 @@ export async function bindPage() {
   setupFPS();
   detectPoseInRealTime(video, net);
 }
+
+var w  = new WebSocket('ws://127.0.0.1:9001');
 
 navigator.getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
