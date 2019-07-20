@@ -1,8 +1,8 @@
-# PoseNet [source](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+# PoseNet [[source](https://github.com/tensorflow/tfjs-models/tree/master/posenet)]
 
 ## Contents
 
-### Demo: Camera [source](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+### Demo: Camera [[source](https://github.com/tensorflow/tfjs-models/tree/master/posenet)]
 
 The camera demo shows how to estimate poses in real-time from a webcam video stream.
 
