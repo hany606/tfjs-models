@@ -25,9 +25,10 @@ const videoHeight = 500;
 const stats = new Stats();
 
 const websocketFlag = 1;
-const websocketConf = 'ws://192.168.43.164:8090/ws';
+//const websocketConf = 'ws://192.168.43.164:8090/ws';
+const websocketConf = 'ws://127.0.0.1:8091/ws';
+var w;
 
-//var w  = new WebSocket('ws://127.0.0.1:9001');
 if(websocketFlag){
 	var w = new WebSocket(websocketConf);
 	w.onopen = function(){
