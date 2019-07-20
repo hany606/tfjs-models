@@ -1,6 +1,6 @@
 # Pre-trained TensorFlow.js posenet model
 
-This repository is forked from (tfjs-models repo)[https://github.com/tensorflow/tfjs-models] and has been modified to have only posenet model.
+This repository is forked from [tfjs-models repo](https://github.com/tensorflow/tfjs-models) and has been modified to have only posenet model.
 
 This repository hosts a pre-trained model of posenet that has been ported to
 TensorFlow.js.
