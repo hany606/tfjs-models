@@ -1,20 +1,12 @@
 # Pre-trained TensorFlow.js posenet model
 
-This repository is forked from [tfjs-models repo](https://github.com/tensorflow/tfjs-models) and has been modified to have only posenet model.
+This repository is originally forked from [tfjs-models repo](https://github.com/tensorflow/tfjs-models) and has been modified to have only posenet model.
+
+
+The reason behind this repository that it was a part of [this project](https://github.com/hany606/COEX-Internship19/tree/master/projects/Human_pose_estimation_drone_control); to control a clever 4 drone from Copter Express comapny using Human poses.
 
 This repository hosts a pre-trained model of posenet that has been ported to
 TensorFlow.js.
-
-The model is hosted on NPM and unpkg so it can be used in any project out of the box. It can be used directly or used in a transfer learning
-setting with TensorFlow.js.
-
-To find out about APIs for models, look at the README in each of the respective
-directories. In general, we try to hide tensors so the API can be used by
-non-machine learning experts.
-
-For those interested in contributing a model, please file a [GitHub issue on tfjs](https://github.com/tensorflow/tfjs/issues) to gauge
-interest. We are trying to add models that complement the existing set of models
-and can be used as building blocks in other apps.
 
 ## Model
 
