@@ -24,6 +24,30 @@ const videoWidth = 600;
 const videoHeight = 500;
 const stats = new Stats();
 
+const websocketFlag = 1;
+const websocketConf = 'ws://192.168.43.164:8090/ws';
+
+//var w  = new WebSocket('ws://127.0.0.1:9001');
+if(websocketFlag){
+	var w = new WebSocket(websocketConf);
+	w.onopen = function(){
+	  console.log("Open web socket");
+	  w.send("The session has started");
+	}
+
+	w.onmessage = function(e){
+	  console.log(e.data.toString());
+	}
+	w.onclose = function(e){
+	  console.log("Session has been closed");
+	}
+	w.onerror = function(e){
+	  console.log("Error");
+	  console.log(e);
+	}
+
+}
+
 /**
  * Loads a the camera to be used in the demo
  *
@@ -155,7 +179,8 @@ function detectPoseInRealTime(video, net) {
     // For each pose (i.e. person) detected in an image, loop through the poses
     // and draw the resulting skeleton and keypoints if over certain confidence
     // scores
-    w.send(JSON.stringify(poses));
+	if(websocketFlag)
+	    w.send(JSON.stringify(poses));
     // console.log(JSON.stringify(poses));
     poses.forEach(({score, keypoints}) => {
       if (score >= minPoseConfidence) {
@@ -212,23 +237,6 @@ export async function bindPage() {
   detectPoseInRealTime(video, net);
 }
 
-//var w  = new WebSocket('ws://127.0.0.1:9001');
-var w = new WebSocket('ws://192.168.43.164:8090/ws');
-w.onopen = function(){
-  console.log("Open web socket");
-  w.send("The session has started");
-}
-
-w.onmessage = function(e){
-  console.log(e.data.toString());
-}
-w.onclose = function(e){
-  console.log("Session has been closed");
-}
-w.onerror = function(e){
-  console.log("Error");
-  console.log(e);
-}
 
 navigator.getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
