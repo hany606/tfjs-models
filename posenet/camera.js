@@ -212,8 +212,8 @@ export async function bindPage() {
   detectPoseInRealTime(video, net);
 }
 
-var w  = new WebSocket('ws://127.0.0.1:9001');
-
+//var w  = new WebSocket('ws://127.0.0.1:9001');
+var w = new WebSocket('ws://192.168.43.164:8090/ws');
 w.onopen = function(){
   console.log("Open web socket");
   w.send("The session has started");
