@@ -24,7 +24,7 @@ const videoWidth = 600;
 const videoHeight = 500;
 const stats = new Stats();
 
-const websocketFlag = 0;
+const websocketFlag = 1;
 //const websocketConf = 'ws://192.168.43.164:8090/ws';
 const websocketConf = 'ws://127.0.0.1:8091/ws';
 var w;
