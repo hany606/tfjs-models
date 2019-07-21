@@ -10,24 +10,26 @@ The camera demo shows how to estimate poses in real-time from a webcam video str
 
 ## Setup
 
-cd into the posenet folder:
+- cd into the posenet folder:
 
 ```sh
 cd posenet/
 ```
 
-Install dependencies and prepare the build directory:
+- Install dependencies and prepare the build directory:
 
 ```sh
 yarn --watch
 ```
 
-Start the server:
+- Start the server without websocket server:
 ```sh
-yarn watch
+yarn normal
+```
+- Start the server with websocket server running already:
+```sh
+yarn websocket
 ```
 Open from the browser http://localhost:1234 to see the running server that estimate the human pose with 17 key points and using websockets to send the data in JSON serialization to a connected websocket server in the network.
-
-You can change the websocket server addresse and port at the begining of the camera.js file, you can also work without the websocket by make the value of websocketFlag  = 0 in the same file.
 
 The reason behind the exsitance of websocket communication that this project was part of [this](https://github.com/hany606/COEX-Internship19/tree/master/projects/Human_pose_estimation_drone_control); to control a clever 4 drone from Copter Express comapny using Human poses.
