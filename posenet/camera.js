@@ -95,7 +95,7 @@ const defaultMobileNetStride = 16;
 const defaultMobileNetInputResolution = 257;
 
 const parameters = {
-  algorithm: 'single-pose',
+  algorithm: 'multi-pose',
   input: {
     architecture: 'MobileNetV1',
     outputStride: defaultMobileNetStride,
@@ -103,7 +103,7 @@ const parameters = {
     multiplier: defaultMobileNetMultiplier,
     quantBytes: defaultQuantBytes
   },
-  singlePoseDetection: {
+  multiPoseDetection: {
     minPoseConfidence: 0.1,
     minPartConfidence: 0.5,
   },
@@ -161,11 +161,11 @@ function detectPoseInRealTime(video, net) {
     let minPartConfidence;
     const pose = await parameters.net.estimatePoses(video, {
       flipHorizontal: flipPoseHorizontal,
-      decodingMethod: 'single-person'
+      decodingMethod: 'multi-person'
     });
     poses = poses.concat(pose);
-    minPoseConfidence = +parameters.singlePoseDetection.minPoseConfidence;
-    minPartConfidence = +parameters.singlePoseDetection.minPartConfidence;
+    minPoseConfidence = +parameters.multiPoseDetection.minPoseConfidence;
+    minPartConfidence = +parameters.multiPoseDetection.minPartConfidence;
     
   
 
