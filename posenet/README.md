@@ -40,3 +40,12 @@ yarn websocket
 Open from the browser http://localhost:1234 to see the running server that estimate the human pose with 17 key points and using websockets to send the data in JSON serialization to a connected websocket server in the network.
 
 The reason behind the exsitance of websocket communication that this project was part of [this](https://github.com/hany606/COEX-Internship19/tree/master/projects/Human_pose_estimation_drone_control); to control a clever 4 drone from Copter Express comapny using Human poses.
+
+
+## References:
+- https://blog.nanonets.com/human-pose-estimation-2d-guide/
+- https://clever.copterexpress.com/en/
+- https://github.com/tensorflow/tfjs-models/tree/master/posenet
+- https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5
+- https://www.tensorflow.org/js/demos
+- https://www.tensorflow.org/lite/models/pose_estimation/overview
