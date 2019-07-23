@@ -8,6 +8,13 @@ The camera demo shows how to estimate poses in real-time from a webcam video str
 
 <img src="https://github.com/hany606/tfjs-posenet/blob/master/posenet/camera.gif" alt="cameraDemo" style="width: 600px;"/>
 
+## Dependencies
+- Install Nodejs from [here](https://nodejs.org/en/download/). For [Ubuntu installation](https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/)
+- Install Yarn package manager from [here](https://yarnpkg.com/lang/en/docs/install/). [Usual problem](https://github.com/yarnpkg/yarn/issues/3189) while installing and using yarn with Ubuntu.
+
+and you are ready to go.
+
+
 ## Setup
 
 - cd into the posenet folder:
